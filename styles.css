@@ -42,30 +42,32 @@ body {
   color: #222;
 }
 
-section {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
-  margin: 24px 10px;
-  padding: 24px 16px;
-}
-
-/* Hero Section Styles */
+/* HERO SECTION */
 .hero {
+  min-height: 100vh;
   position: relative;
-  background-image: url('img/hero-background.jpg'); /* NEW IMAGE */
+  background-image: url('img/hero-background.jpg'); /* new background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-  border-radius: 0 0 16px 16px;
   background-blend-mode: darken;
   background-color: rgba(46, 157, 247, 0.45);
+  display: flex;
+  align-items: center;
 }
 
-/* Logo */
+.overlay {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: none; /* ← REMOVE BLACK BOX */
+}
+
+/* LOGO */
 .logo {
   margin-bottom: 20px;
 }
@@ -80,7 +82,7 @@ section {
   transform: scale(1.05);
 }
 
-/* Hero Text */
+/* HEADLINE */
 .headline {
   font-size: 2.5em;
   font-weight: bold;
@@ -88,6 +90,7 @@ section {
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  max-width: 700px;
 }
 
 .headline:hover {
@@ -98,12 +101,11 @@ section {
   font-size: 1.2em;
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 700px;
+  margin-bottom: 20px;
 }
 
-/* CTA Button */
+/* CTA BUTTON */
 .cta-button {
   background-color: var(--yellow);
   border: none;
@@ -113,7 +115,7 @@ section {
   font-size: 1.1em;
   border-radius: 6px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 12px;
   box-shadow: 0 2px 8px rgba(255, 201, 7, 0.2);
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -123,111 +125,42 @@ section {
   transform: scale(1.05);
 }
 
-/* Impact List */
+/* IMPACT LIST */
 .impact-list {
   margin-top: 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  list-style-type: none;
+  padding: 0;
+  max-width: 700px;
 }
 
-/* Story Section */
-.story {
-  background-color: var(--light-blue);
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
+.impact-list li {
+  margin-bottom: 0.5rem;
 }
 
-/* Section Headings */
-h2 {
-  color: var(--blue);
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section */
-.call-to-action {
-  background-color: var(--yellow);
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Impact Image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button */
-.donate-button {
-  display: inline-block;
-  background-color: var(--green);
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-.donate-button:hover {
-  background-color: var(--dark-green);
-  transform: translateY(-2px) scale(1.04);
-}
-
-/* Responsive Styles */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .hero {
     padding: 32px 8px;
   }
 
   .headline {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 
   .subheadline {
     font-size: 1em;
   }
 
-  .story,
-  .call-to-action {
-    padding: 14px 8px;
+  .cta-button {
+    font-size: 1em;
+    padding: 12px 24px;
   }
 
-  .impact-content {
-    display: block;
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;
-    max-width: 220px;
-  }
-}
-
-@media (min-width: 601px) {
-  .impact-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .impact-image {
-    width: 300px;
+  .impact-list {
+    font-size: 1em;
   }
 }
